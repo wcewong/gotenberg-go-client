@@ -77,6 +77,12 @@ func (req *request) AddWebhookURLHTTPHeader(key, value string) {
 	req.httpHeaders[key] = value
 }
 
+func (req *request) Headers(headers map[string]string) {
+	for key, value := range headers {
+		req.httpHeaders[key] = value
+	}
+}
+
 func (req *request) customHTTPHeaders() map[string]string {
 	return req.httpHeaders
 }
